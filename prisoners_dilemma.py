@@ -503,16 +503,20 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
     ######
     ######
     #
-    elif player == 16:
+    # collude 1st
+    elif player == 16 :
         if getting_team_name:
-            return 'loyal vengeful'
+            return 'loyal till proven guilty'
         else:
-            if len(opponent_history)==0: #It's the first round: collude
+            if len (opponent_history)==0:
                 return 'c'
-            elif history[-1]=='c' and opponent_history[-1]=='b':
-                return 'b' # betray is they were severely punished last time
+            elif history[-1]=='c' and opponent_history [-1]=='c':
+                return 'c'
+            elif history[-1]=='c' and opponent_history [-1]=='b':
+                return 'b'
             else:
-                return 'c' #otherwise collude
+                return 'b'
+             
     
     
 
